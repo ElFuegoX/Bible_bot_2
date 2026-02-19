@@ -3,3 +3,6 @@
 bible_env
 __pycache__/
 /.files
+.chainlit/
+*.pyc
+*.pyo

@@ -1,28 +1,27 @@
-# Thomas - AI Bible Assistant 📖
+# Thomas - Assistant Biblique 📖
 
-**Your Interactive Companion for Biblical Exploration**  
+**Ton compagnon interactif pour explorer la Bible et la théologie.**
 
-## 🌟 Key Features  
-- 💬 Interactive dialogue on biblical themes  
-- 🔍 Verse, character, and theological concept lookup  
-- 🎨 Simple and intuitive interface for all users  
-- 🔄 Instant conversation reset  
-- 🌙 Automatic light/dark mode  
+## 🌟 Fonctionnalités
 
-## 🚀 How to Use?  
-1. **Type your question** in the text area (e.g., "Who was Ruth?", "Explain John 3:16")  
-2. **Receive a contextualized answer** with biblical references  
-3. **Explore topics** through follow-up questions  
-4. Start over anytime with the "Reset Conversation" button  
+- 💬 **Dialogue interactif** sur tous les sujets bibliques
+- 🔍 **Recherche** de versets, personnages et concepts théologiques
+- 📎 **Upload de textes** pour analyse et commentaire
+- 🤖 **Multi-LLM** : choisis entre Gemini, Mistral ou Groq
+- 🌙 Mode clair / Mode sombre automatique
 
-> ℹ️ *Note: This is an educational prototype. For in-depth study, always consult sacred texts or religious authorities.*  
+## 🚀 Comment utiliser ?
 
-## 🙏 Acknowledgments  
-- Built with [Streamlit](https://streamlit.io/) ❤️  
-- Theological inspiration: Louis Segond 1910 Bible  
-- Enhanced language model for biblical analysis  
+1. **Tape ta question** dans la zone de texte  
+2. **Reçois une réponse** avec les références bibliques pertinentes  
+3. **Explore les sources** en cliquant sur les passages cités  
+4. **Change de modèle** via le panneau ⚙️ Settings  
+5. **Upload un texte** (fichier .txt ou .md) pour l'analyser  
+
+> ℹ️ *Ceci est un assistant éducatif. Pour une étude approfondie, consultez toujours les textes sacrés et les autorités religieuses.*
 
 ---
 
-👨💻 Created by [Ghilth GBAGUIDI](https://www.linkedin.com/in/ghilth/)  
-*"Seek and you will find." - Matthew 7:7 (NIV)*  
+👨💻 Créé par [El Fuego]
+(https://www.linkedin.com/in/mélon-joanès-afagnibo-88237a33a)                     
+*« Cherchez, et vous trouverez. » — Matthieu 7:7*

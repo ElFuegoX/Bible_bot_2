@@ -1,0 +1,53 @@
+/* ─── Thomas Bible Bot - Custom Styles ─── */
+
+/* Importer Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Masquer le watermark Chainlit */
+a img[alt="watermark"] {
+    display: none !important;
+}
+
+/* Personnaliser le lien de crédit */
+a[href*="chainlit.io"],
+a[href*="github.com/Chainlit/chainlit"] {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+a[href*="chainlit.io"]:hover,
+a[href*="github.com/Chainlit/chainlit"]:hover {
+    opacity: 1;
+}
+
+/* Animation subtile sur les messages entrants */
+.cl-message {
+    animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style des blocs de citation (sources bibliques) */
+blockquote {
+    border-left: 3px solid hsl(32, 75%, 38%);
+    padding-left: 12px;
+    margin: 8px 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Amélioration de la zone de texte */
+textarea {
+    font-family: 'Inter', sans-serif !important;
+}
