@@ -84,13 +84,13 @@ async def on_chat_start():
     # Message de bienvenue
     await cl.Message(
         content=(
-            "## 📖 Bienvenue ! Je suis **Thomas**, ton assistant biblique.\n\n"
+            "## 📖 Bienvenue ! Je suis Thomas, ton assistant biblique.\n\n"
             "Je peux t'aider avec :\n"
             "- 💬 **Questions** sur la Bible et la théologie\n"
             "- 📜 **Explication** de versets et passages\n"
             "- 📎 **Analyse** de textes que tu m'envoies (upload)\n"
             "- 🔍 **Recherche** de thèmes bibliques\n\n"
-            f"Modèle actif : **{LLM_PROVIDERS[DEFAULT_PROVIDER]['label']}**\n\n"
+            f"Modèle actif : {LLM_PROVIDERS[DEFAULT_PROVIDER]['label']}\n\n"
             "---\n"
             "*Pose ta question ci-dessous ou clique sur une suggestion !*"
         ),
@@ -114,14 +114,12 @@ async def on_settings_update(settings):
     
     label = LLM_PROVIDERS.get(provider, {}).get("label", provider)
     await cl.Message(
-        content=f"✅ Modèle changé : **{label}** | Température : **{temperature}**",
+        content=f"✅ é : **{label}** | Température : **{temperature}**",
     ).send()
 
 
-#    Commandes manuelles
-
-
-
+@cl.on_message
+async def main(message: cl.Message):
     # Récupérer la config de session
     provider = cl.user_session.get("llm_provider", DEFAULT_PROVIDER)
     temperature = cl.user_session.get("temperature", DEFAULT_TEMPERATURE)
@@ -201,10 +199,6 @@ async def on_settings_update(settings):
             )
         ]
         
-        await cl.Message(
-            content="📚 *Sources consultées — cliquez pour voir les passages*",
-            elements=source_elements,
-        ).send()
     
     # Mettre à jour l'historique
     chat_history.append({"role": "user", "content": message.content})

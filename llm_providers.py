@@ -6,6 +6,7 @@ from langchain_core.language_models import BaseChatModel
 from bot_config import LLM_PROVIDERS, DEFAULT_PROVIDER, DEFAULT_TEMPERATURE
 
 
+
 def get_available_providers() -> list[str]:
     """Retourne la liste des providers dont la clé API est configurée."""
     available = []

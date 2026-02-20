@@ -1,8 +1,18 @@
+# Virtual environment
+venv/
+.venv/
+env/
 .env
-/env
-bible_env
+
+# Python
 __pycache__/
-/.files
-.chainlit/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
