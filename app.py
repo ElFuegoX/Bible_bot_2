@@ -10,7 +10,7 @@ from bot_config import (
     MAX_HISTORY_MESSAGES,
 )
 from llm_providers import get_llm, get_available_providers
-from rag_engine import ask
+from rag_engine import ask, ask_stream
 
 
 # Chat Settings (panneau de réglages)
@@ -107,25 +107,29 @@ async def main(message: cl.Message):
         await cl.Message(content=f"❌ Erreur de configuration : {e}").send()
         return
     
-    # Envoyer un message de chargement
+    # Envoyer un message vide qui servira de base pour le stream
     msg = cl.Message(content="")
-    await msg.send()
     
-    # Interroger le moteur RAG
+    # Interroger le moteur RAG en mode streaming
+    full_answer = ""
     try:
-        result = ask(user_question, llm, chat_history)
+        async for chunk in ask_stream(user_question, llm, chat_history):
+            if chunk:
+                full_answer += chunk
+                await msg.stream_token(chunk)
     except Exception as e:
-        msg.content = f"❌ Erreur lors du traitement : {str(e)}"
-        await msg.update()
+        if not full_answer:
+            msg.content = f"❌ Erreur lors du traitement : {str(e)}"
+            await msg.send()
+        else:
+            await cl.Message(content=f"\n\n⚠️ Erreur partielle : {str(e)}").send()
         return
     
-    # Afficher la réponse
-    msg.content = result["answer"]
-    await msg.update()
+    await msg.send()
     
     # Mettre à jour l'historique
     chat_history.append({"role": "user", "content": message.content})
-    chat_history.append({"role": "assistant", "content": result["answer"]})
+    chat_history.append({"role": "assistant", "content": full_answer})
     
     # Limiter la taille de l'historique
     if len(chat_history) > MAX_HISTORY_MESSAGES * 2:

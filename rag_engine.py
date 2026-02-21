@@ -95,3 +95,23 @@ def ask(question: str, llm: BaseChatModel, chat_history: list[dict] = None) -> d
         "answer": response.get("answer", "Je n'ai pas pu formuler une réponse. Reformulez votre question."),
         "sources": response.get("context", []),
     }
+
+
+async def ask_stream(question: str, llm: BaseChatModel, chat_history: list[dict] = None):
+    """
+    Générateur asynchrone pour le streaming RAG.
+    
+    Yields:
+        Des chunks de texte (str) pour la réponse.
+    """
+    chain = create_chain(llm)
+    history_messages = format_history(chat_history or [])
+    
+    async for chunk in chain.astream({
+        "input": question,
+        "chat_history": history_messages,
+    }):
+        # Le chunk peut contenir 'context' ou 'answer'
+        # On ne veut streamer que l'answer
+        if "answer" in chunk:
+            yield chunk["answer"]

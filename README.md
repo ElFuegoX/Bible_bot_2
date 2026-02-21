@@ -1,3 +1,12 @@
+---
+title: Thomas - Assistant Biblique 📖
+emoji: 📖
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # 📖 Thomas - Assistant Biblique
 
 Un chatbot intelligent spécialisé dans la Bible et la théologie, propulsé par l'intelligence artificielle.
