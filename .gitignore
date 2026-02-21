@@ -16,3 +16,7 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+faiss_bible_bdv/
+public/*.png
+public/*.gif
