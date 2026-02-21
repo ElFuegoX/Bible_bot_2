@@ -32,6 +32,7 @@ a[href*="github.com/Chainlit/chainlit"]:hover {
         opacity: 0;
         transform: translateY(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -50,4 +51,10 @@ blockquote {
 /* Amélioration de la zone de texte */
 textarea {
     font-family: 'Inter', sans-serif !important;
+}
+
+/* Masquer l'icône d'upload */
+#upload-button,
+.cl-upload-button {
+    display: none !important;
 }

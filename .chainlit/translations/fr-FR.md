@@ -6,6 +6,7 @@
 
 - 💬 **Dialogue interactif** sur tous les sujets bibliques
 - 🔍 **Recherche** de versets, personnages et concepts théologiques
+- 📎 **Upload de textes** pour analyse et commentaire
 - 🤖 **Multi-LLM** : choisis entre Gemini, Mistral ou Groq
 - 🌙 Mode clair / Mode sombre automatique
 
@@ -15,6 +16,7 @@
 2. **Reçois une réponse** avec les références bibliques pertinentes  
 3. **Explore les sources** en cliquant sur les passages cités  
 4. **Change de modèle** via le panneau ⚙️ Settings  
+5. **Upload un texte** (fichier .txt ou .md) pour l'analyser  
 
 > ℹ️ *Ceci est un assistant éducatif. Pour une étude approfondie, consultez toujours les textes sacrés et les autorités religieuses.*
 
