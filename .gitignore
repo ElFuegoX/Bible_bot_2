@@ -17,9 +17,9 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Gros binaires ignorés
-faiss_bible_bdv/
+# Gros binaires ignorés (désormais suivis car < 100Mo)
+# faiss_bible_bdv/
 public/*.png
 public/*.gif
-*.faiss
-*.pkl
+# *.faiss
+# *.pkl
